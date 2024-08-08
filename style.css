@@ -1,0 +1,456 @@
+:root{
+  --primary-color:#0ea2bd;
+  --secondary-color:white;
+  --text-color:#2b2b2b;
+  --third-color:#0d2735;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* backbtn */
+.bckbtn {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  z-index: 50;
+  display: none;
+  transition: all 0.3s ease-in-out;
+  border: 2px solid var(--primary-color);
+}
+
+.bckbtn i {
+  transition: all 0.3s ease-in-out;
+  color: whitesmoke;
+  padding: 10px;
+  font-size: 25px;
+}
+.bckbtn:hover{
+  border: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.bckbtn:hover i{
+  color: var(--primary-color);
+}
+
+/* loader-start */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 646;
+  background-color: #fff;
+}
+
+.loader {
+  width: 44.8px;
+  height: 44.8px;
+  color: var(--primary-color);
+  position: relative;
+  background: radial-gradient(11.2px, currentColor 94%, #0000);
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(10.08px at bottom right, #0000 94%, currentColor) top left,
+    radial-gradient(10.08px at bottom left, #0000 94%, currentColor) top right,
+    radial-gradient(10.08px at top right, #0000 94%, currentColor) bottom left,
+    radial-gradient(10.08px at top left, #0000 94%, currentColor) bottom right;
+  background-size: 22.4px 22.4px;
+  background-repeat: no-repeat;
+  animation: loader 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+@keyframes loader {
+  33% {
+    inset: -11.2px;
+    transform: rotate(0deg);
+  }
+
+  66% {
+    inset: -11.2px;
+    transform: rotate(90deg);
+  }
+
+  100% {
+    inset: 0;
+    transform: rotate(90deg);
+  }
+}
+
+/* headder */
+.head{
+  background-color: var(--secondary-color);
+}
+.head a {
+  text-decoration: none;
+  color: var(--text-color) !important;
+  font-weight: 600;
+}
+
+.head .nav-item {
+  margin: 0px 5px;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid transparent ;
+}
+
+.head .nav-item:hover {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.head .nav-item:hover a {
+  color: var(--primary-color) !important;
+}
+
+.head .nav-item.active {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.head .nav-item.active .nav-link{
+  color: var(--primary-color) !important;
+
+}
+
+.head .navbar-toggler:focus {
+  box-shadow: none !important;
+}
+/* heding underline */
+.textunderlines{
+  border-bottom: 1.6px solid var(--primary-color);
+  width: fit-content;
+  padding-bottom: 5px;
+  margin: 0 auto;
+}
+.textunderlinestart{
+  border-bottom: 1.6px solid var(--primary-color);
+  width: fit-content;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+/* carousel-start */
+.crslSlide {
+  position: relative;
+  z-index: 2;
+}
+
+.slideImg {
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+/* pay section */
+.payimg,.frmimg{
+  width: 100%;
+ 
+  background-image: url('images/easy-pay01.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px #0d2735c1;
+  background-attachment: fixed;
+}
+.frmimg{
+  background-image: url('images/structures-architecture-from-new-york-city_23-2150820108.jpg');
+  background-position: center center;
+
+}
+/* acount */
+.acnttable tr{
+  border: 0px solid transparent !important;
+}
+
+/* welcome-section */
+.pera{
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(65, 65, 65);
+  letter-spacing: 0.5px; 
+}
+.txt{
+  color: var(--primary-color);
+  font-weight: 600;
+}
+/* service */
+.srvcimg{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: bottom right;
+}
+.srvccard img{
+  transition: all 0.3s ease-in-out;
+}
+.srvccontent{
+  position: relative;
+  background-color: #ffffffad;
+ margin-top: -75px;
+ height: 220px;
+ display: flex;
+ flex-direction: column;
+ justify-content: start;
+}
+
+.srvccard:hover img{
+  transform: scale(1.05);
+}
+.srvccard i{
+  font-size: 35px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  position: absolute;
+  top: -3%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 80px;
+  height: 80px;
+  outline: 9px solid var(--secondary-color);
+  transition: all 0.3s ease-in-out;
+}
+.srvccard:hover i{
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  outline: 3px solid var(--primary-color);
+}
+.srvccard:hover h5{
+  color: var(--primary-color);
+}
+/* counter */
+.counter{
+  /* background-color: #0ea3bda4; */
+  background-image: url('images/counter.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 2000px #0d2735c1;
+  background-attachment: fixed;
+}
+.counter h2{
+  color: var(--primary-color);
+}
+/* footer */
+
+.footer {
+  background-color:var(--third-color);
+  background-attachment: fixed;
+}
+
+.ftlnk {
+  color: var(--secondary-color);
+}
+
+.ftlnk h4{
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.ftlnk li {
+  padding: 5px;
+}
+
+.ftlnk i {
+  font-size: 12px;
+  padding-right: 5px;
+  color: var(--secondary-color);
+}
+
+.ftlnk a {
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 15px;
+}
+
+.ftlnk a:hover {
+  color: var(--primary-color);
+}
+
+.sclmd a {
+  width: 45px;
+  height: 45px;
+  padding: 10px;
+  background-color: #ffffff1a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.sclmd i {
+  font-size: 25px;
+  color: var(--secondary-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.sclmd a:hover {
+  background-color: var(--primary-color);
+}
+
+.sclmd a:hover i {
+  color: whitesmoke;
+}
+
+@media screen and (max-width:576px) {
+  .hero,.hero-srvr,.hero-actvt,.hero-cntct{
+    background-size: contain !important;
+    height: 32vh !important;
+    background-position:0px 102px !important;
+  }
+  .gift{
+    object-position: 0 0 !important;
+  }
+}
+
+
+/* about-us page*/
+.hero,.hero-srvr,.hero-actvt,.hero-cntct{
+    width: 100%;
+    height: 92vh;
+    background-image: url('./images/aboutus01.jpg');
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px 0px 0px 2000px #000000b6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-attachment: fixed;
+  }
+.mmbr-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.mmbr{
+  margin-top: -50px;
+  background-color: var(--secondary-color);
+  margin: -50px 50px 0px;
+}
+
+.crsl h5{
+  background-color: var(--primary-color);
+  color: var(--third-color);
+}
+.crsl .carousel{
+  border: 4px solid var(--primary-color);
+}
+.crsl .carousel-inner{
+  height: 348px;
+}
+.crsl .carousel-inner .carousel-item{
+  height: 100%;
+}
+.textsizeabout{
+  font-size: 14px;
+  font-weight: 650;
+}
+/* service-page */
+.hero-srvr{
+  background-image: url("./images/photorealistic-money-with-house_23-2151027607.jpg");
+
+}
+.popuphead{
+  color: var(--primary-color);
+  /* text-align: center !important; */
+}
+/* activiti-page */
+.hero-actvt{
+  background-image: url('./images/activity.jpg    ');
+}
+.actvtcrd{
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.actvtcrd:hover{
+  box-shadow: 0px 0px 22px 7px rgba(173, 173, 173, 0.479);
+}
+.actvtcrd img{
+  transition: all 0.3s ease-in-out;
+}
+.actvtcrd:hover img{
+  transform: scale(1.1);
+}
+.gift{
+  object-position: 0 -25px;
+}
+/* contact-page */
+.hero-cntct{
+  background-image: url('./images/antique-telephone-wooden-desk-nostalgic-relic-generated-by-ai_188544-28105.jpg');
+  object-fit: cover;
+}
+.cntscicon {
+  background-color: var(--primary-color);
+}
+
+.cntscicon p {
+  font-size: 18px;
+}
+.sbmtbtn {
+  background-color: var(--primary-color);
+  border:1px solid var(--primary-color) !important;
+}
+
+.sbmtbtn:hover {
+  background-color: #fff;
+  color: var(--primary-color);
+  border-color: var(--primary-color) !important;
+}
+
+/* pay-page */
+.paycrd{
+  position: relative;
+  z-index: 0;
+}
+.bckhome{
+  background-color: var(--primary-color);
+  color: var(--third-color);
+  transition: all 0.3s ease-in-out;
+  border: 2px solid var(--primary-color);
+}
+.bckhome:hover{
+  background-color: #fff;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+.paycrd::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 0%;
+  left: 0;
+  height: 0%;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+.paycrd:hover::after{
+  top: 0%;
+  height: 100%;
+}
+.paycrd h3{
+  transition:  all 0.3s ease-in-out;
+}
+.paycrd p{
+  transition: all 0.3s ease-in-out;
+}
+.paycrd:hover h3{
+  color: var(--third-color);
+}
+.paycrd:hover p{
+  color: var(--third-color);
+}
